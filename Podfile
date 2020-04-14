@@ -7,7 +7,9 @@ target 'KidsActivityGroup-Project' do
 
   # Pods for KidsActivityGroup-Project
 
- pod 'Firebase/Analytics'
+ 	pod 'Firebase/Analytics'
+	pod 'Firebase/Firestore'
+	pod 'FirebaseFirestoreSwift'
 
   target 'KidsActivityGroup-ProjectTests' do
     inherit! :search_paths
