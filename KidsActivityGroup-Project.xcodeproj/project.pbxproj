@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		556952D7244644040033E202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556952D5244644040033E202 /* LaunchScreen.storyboard */; };
 		556952E2244644040033E202 /* KidsActivityGroup_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952E1244644040033E202 /* KidsActivityGroup_ProjectTests.swift */; };
 		633E08BC3230D3F736F5CB3D /* Pods_KidsActivityGroup_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251A39446E8282AF9C95A684 /* Pods_KidsActivityGroup_Project.framework */; };
+		C1FE2239244650C900D1E33D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1FE2238244650C900D1E33D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		556952DD244644040033E202 /* KidsActivityGroup-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KidsActivityGroup-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		556952E1244644040033E202 /* KidsActivityGroup_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsActivityGroup_ProjectTests.swift; sourceTree = "<group>"; };
 		556952E3244644040033E202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FE2238244650C900D1E33D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E740115BEDEB919669A74C83 /* Pods-KidsActivityGroup-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-Project.release.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-Project/Pods-KidsActivityGroup-Project.release.xcconfig"; sourceTree = "<group>"; };
 		FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivityGroup_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB138D1D2F948F9730DFEA1 /* Pods-KidsActivityGroup-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-ProjectTests/Pods-KidsActivityGroup-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				556952EC244644320033E202 /* supportingFiles */,
 				556952D8244644040033E202 /* Info.plist */,
 				556952D0244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld */,
+				C1FE2238244650C900D1E33D /* GoogleService-Info.plist */,
 			);
 			path = "KidsActivityGroup-Project";
 			sourceTree = "<group>";
@@ -139,7 +142,6 @@
 				FCB138D1D2F948F9730DFEA1 /* Pods-KidsActivityGroup-ProjectTests.debug.xcconfig */,
 				037BAF6D1F75346950AD50FB /* Pods-KidsActivityGroup-ProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -228,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				556952D7244644040033E202 /* LaunchScreen.storyboard in Resources */,
+				C1FE2239244650C900D1E33D /* GoogleService-Info.plist in Resources */,
 				556952D4244644040033E202 /* Assets.xcassets in Resources */,
 				556952CF244644020033E202 /* Main.storyboard in Resources */,
 			);
