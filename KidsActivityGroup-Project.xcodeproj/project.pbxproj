@@ -20,6 +20,9 @@
 		556952F0244655540033E202 /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952EF244655540033E202 /* SettingController.swift */; };
 		556952F32446561F0033E202 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952F22446561F0033E202 /* TabBarController.swift */; };
 		633E08BC3230D3F736F5CB3D /* Pods_KidsActivityGroup_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 251A39446E8282AF9C95A684 /* Pods_KidsActivityGroup_Project.framework */; };
+		C1FE223B244664E700D1E33D /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE223A244664E700D1E33D /* ActivityModel.swift */; };
+		C1FE223E244667C300D1E33D /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE223D244667C300D1E33D /* DatabaseService.swift */; };
+		C1FE224024469B8400D1E33D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1FE223F24469B8400D1E33D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		556952ED244655410033E202 /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		556952EF244655540033E202 /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		556952F22446561F0033E202 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C1FE223A244664E700D1E33D /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		C1FE223D244667C300D1E33D /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		C1FE223F24469B8400D1E33D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E740115BEDEB919669A74C83 /* Pods-KidsActivityGroup-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-Project.release.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-Project/Pods-KidsActivityGroup-Project.release.xcconfig"; sourceTree = "<group>"; };
 		FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivityGroup_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB138D1D2F948F9730DFEA1 /* Pods-KidsActivityGroup-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-ProjectTests/Pods-KidsActivityGroup-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,9 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				556952CD244644020033E202 /* Main.storyboard */,
+				C1FE223C244664EC00D1E33D /* Models */,
 				556952F1244655A20033E202 /* Controller */,
 				556952EC244644320033E202 /* supportingFiles */,
 				556952D8244644040033E202 /* Info.plist */,
+				C1FE223F24469B8400D1E33D /* GoogleService-Info.plist */,
 				556952D0244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld */,
 			);
 			path = "KidsActivityGroup-Project";
@@ -146,6 +154,15 @@
 				FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1FE223C244664EC00D1E33D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1FE223A244664E700D1E33D /* ActivityModel.swift */,
+				C1FE223D244667C300D1E33D /* DatabaseService.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F749D607230FBD4F2385FBD5 /* Pods */ = {
@@ -244,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				556952D7244644040033E202 /* LaunchScreen.storyboard in Resources */,
+				C1FE224024469B8400D1E33D /* GoogleService-Info.plist in Resources */,
 				556952D4244644040033E202 /* Assets.xcassets in Resources */,
 				556952CF244644020033E202 /* Main.storyboard in Resources */,
 			);
@@ -327,10 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FE223E244667C300D1E33D /* DatabaseService.swift in Sources */,
 				556952F0244655540033E202 /* SettingController.swift in Sources */,
 				556952CC244644020033E202 /* ViewController.swift in Sources */,
 				556952D2244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld in Sources */,
 				556952C8244644020033E202 /* AppDelegate.swift in Sources */,
+				C1FE223B244664E700D1E33D /* ActivityModel.swift in Sources */,
 				556952F32446561F0033E202 /* TabBarController.swift in Sources */,
 				556952EE244655410033E202 /* ActivityController.swift in Sources */,
 				556952CA244644020033E202 /* SceneDelegate.swift in Sources */,
