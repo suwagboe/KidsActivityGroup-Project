@@ -13,3 +13,14 @@ struct Activity {
     let title: String
     let description: String
 }
+
+extension Activity {
+    init?(_ dictionary: [String : Any]) {
+        guard let title = dictionary["title"] as? String,
+            let description = dictionary["description"] as? String else {
+                return nil
+        }
+        self.title = title
+        self.description = description
+    }
+}
