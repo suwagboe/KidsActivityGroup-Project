@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bce-ox-5UX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bce-ox-5UX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,18 +81,49 @@
         <!--Item 1-->
         <scene sceneID="8oV-A0-UzX">
             <objects>
-                <viewController id="sNa-jS-4UL" customClass="ViewController" customModule="KidsActivityGroup_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sNa-jS-4UL" customClass="ScheduleVC" customModule="KidsActivityGroup_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nJE-jn-YqB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EPU-u0-RgV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PZE-gZ-p75">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scheduleCell" id="RuO-6R-sdP">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CiQ-I7-BzN">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EPU-u0-RgV" firstAttribute="top" secondItem="8k9-4T-6OZ" secondAttribute="top" id="Cwr-Mn-nCP"/>
+                            <constraint firstItem="EPU-u0-RgV" firstAttribute="leading" secondItem="8k9-4T-6OZ" secondAttribute="leading" id="T2U-fI-mN4"/>
+                            <constraint firstItem="EPU-u0-RgV" firstAttribute="trailing" secondItem="8k9-4T-6OZ" secondAttribute="trailing" id="Y12-ml-SmB"/>
+                            <constraint firstItem="EPU-u0-RgV" firstAttribute="bottom" secondItem="8k9-4T-6OZ" secondAttribute="bottom" id="vYF-I0-mLB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8k9-4T-6OZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="TAY-4s-hkP"/>
+                    <connections>
+                        <outlet property="collectionView" destination="EPU-u0-RgV" id="2cx-82-5HT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odP-LW-2KL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-392"/>
+            <point key="canvasLocation" x="1992.753623188406" y="-392.41071428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rLO-Ik-Eh9">
@@ -133,6 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
     </resources>
 </document>
