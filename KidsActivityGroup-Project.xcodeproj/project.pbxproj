@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		2ECC7594E5379678B7D2FB9A /* Pods_KidsActivityGroup_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */; };
 		3E173B63244695C80087FE9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E173B62244695C80087FE9F /* GoogleService-Info.plist */; };
+		3E5D270B2447AED8008B3240 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5D270A2447AED8008B3240 /* ScheduleVC.swift */; };
 		556952C8244644020033E202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C7244644020033E202 /* AppDelegate.swift */; };
 		556952CA244644020033E202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C9244644020033E202 /* SceneDelegate.swift */; };
-		556952CC244644020033E202 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952CB244644020033E202 /* ScheduleViewController.swift */; };
 		556952CF244644020033E202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 556952CD244644020033E202 /* Main.storyboard */; };
 		556952D2244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 556952D0244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld */; };
 		556952D4244644040033E202 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 556952D3244644040033E202 /* Assets.xcassets */; };
@@ -37,10 +37,10 @@
 		037BAF6D1F75346950AD50FB /* Pods-KidsActivityGroup-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-ProjectTests/Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		251A39446E8282AF9C95A684 /* Pods_KidsActivityGroup_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivityGroup_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E173B62244695C80087FE9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E5D270A2447AED8008B3240 /* ScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		556952C4244644020033E202 /* KidsActivityGroup-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KidsActivityGroup-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		556952C7244644020033E202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556952C9244644020033E202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		556952CB244644020033E202 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		556952CE244644020033E202 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		556952D1244644020033E202 /* KidsActivityGroup_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidsActivityGroup_Project.xcdatamodel; sourceTree = "<group>"; };
 		556952D3244644040033E202 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		556952F1244655A20033E202 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				556952CB244644020033E202 /* ScheduleViewController.swift */,
+				3E5D270A2447AED8008B3240 /* ScheduleVC.swift */,
 				556952ED244655410033E202 /* ActivityController.swift */,
 				556952EF244655540033E202 /* SettingController.swift */,
 				556952F22446561F0033E202 /* TabBarController.swift */,
@@ -332,7 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				556952F0244655540033E202 /* SettingController.swift in Sources */,
-				556952CC244644020033E202 /* ScheduleViewController.swift in Sources */,
+				3E5D270B2447AED8008B3240 /* ScheduleVC.swift in Sources */,
 				556952D2244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld in Sources */,
 				556952C8244644020033E202 /* AppDelegate.swift in Sources */,
 				556952F32446561F0033E202 /* TabBarController.swift in Sources */,

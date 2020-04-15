@@ -80,7 +80,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="TAY-4s-hkP"/>
                     <connections>
-                        <outlet property="collectionView" destination="Hif-hF-acT" id="5Rf-l7-PHw"/>
+                        <outlet property="collectionView" destination="Hif-hF-acT" id="f0T-Ub-68a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odP-LW-2KL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

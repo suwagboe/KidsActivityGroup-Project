@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  ScheduleVC.swift
 //  KidsActivityGroup-Project
 //
-//  Created by Pursuit on 4/14/20.
+//  Created by Juan Ceballos on 4/15/20.
 //  Copyright © 2020 Pursuit. All rights reserved.
 //
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleVC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +24,7 @@ class ScheduleViewController: UIViewController {
     
 }
 
-extension ScheduleViewController: UICollectionViewDataSource    {
+extension ScheduleVC: UICollectionViewDataSource    {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
@@ -37,7 +37,7 @@ extension ScheduleViewController: UICollectionViewDataSource    {
     
 }
 
-extension ScheduleViewController: UICollectionViewDelegateFlowLayout    {
+extension ScheduleVC: UICollectionViewDelegateFlowLayout    {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxSize: CGSize = UIScreen.main.bounds.size
         let itemWidth: CGFloat = maxSize.width
