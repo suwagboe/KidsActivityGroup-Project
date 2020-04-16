@@ -24,11 +24,6 @@ class ScheduleVC: UIViewController {
     // when this page loads fectchCDActivities, reload collectionview
     // set things in items appropriately
     // when item longpressed open camera
-    private lazy var longPressGesture: UILongPressGestureRecognizer = {
-        let gesture = UILongPressGestureRecognizer()
-        gesture.addTarget(self, action: #selector(showActivityOption))
-        return gesture
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +35,9 @@ class ScheduleVC: UIViewController {
         plannedActivities = CoreDataManager.shared.fetchActivities()
     }
     
-    @objc private func showActivityOption()   {
-        if longPressGesture.state == .began {
-            print("did long press")
-        }
-    }
-    
     private func configureCollectionView()  {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.addGestureRecognizer(longPressGesture)
     }
 }
 
@@ -62,10 +50,12 @@ extension ScheduleVC: UICollectionViewDataSource  {
             else    {
                 fatalError()
         }
-        //cell.addGestureRecognizer(longPressGesture)
+
         cell.backgroundColor = .systemTeal
-        let CDActivity = plannedActivities[indexPath.row]
-        cell.configureCell(plannedActivity: CDActivity)
+        let activity = plannedActivities[indexPath.row]
+        cell.scheduleDelegate = self
+        cell.currentActivity = activity
+        cell.configureCell(plannedActivity: activity)
         return cell
     }
     
@@ -87,5 +77,14 @@ extension ScheduleVC: UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
+    
+}
+
+extension ScheduleVC: ScheduleCellDelegate {
+    
+    func didLongPress(_ imageCell: ScheduleCell, activity: CDActivity) {
+        print(activity.id ?? "error")
+    }
+    
     
 }
