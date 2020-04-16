@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ScheduleCellDelegate: AnyObject {
-    func didLongPress(_ imageCell: ScheduleCell, activity: CDActivity)
+    func didLongPress(_ scheduleCell: ScheduleCell, activity: CDActivity)
 }
 
 class ScheduleCell: UICollectionViewCell {
