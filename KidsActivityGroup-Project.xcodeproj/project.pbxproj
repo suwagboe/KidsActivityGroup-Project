@@ -13,6 +13,7 @@
 		029CACF32447D9D200ACF90D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CACF22447D9D200ACF90D /* CoreDataManager.swift */; };
 		029CACF52448D34B00ACF90D /* URL+VideoPreviewThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CACF42448D34B00ACF90D /* URL+VideoPreviewThumbnail.swift */; };
 		2ECC7594E5379678B7D2FB9A /* Pods_KidsActivityGroup_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */; };
+		3E5D270F2448E909008B3240 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5D270E2448E909008B3240 /* ScheduleCell.swift */; };
 		556952C8244644020033E202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C7244644020033E202 /* AppDelegate.swift */; };
 		556952CA244644020033E202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C9244644020033E202 /* SceneDelegate.swift */; };
 		556952CC244644020033E202 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952CB244644020033E202 /* ScheduleVC.swift */; };
@@ -49,6 +50,7 @@
 		029CACF42448D34B00ACF90D /* URL+VideoPreviewThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+VideoPreviewThumbnail.swift"; sourceTree = "<group>"; };
 		037BAF6D1F75346950AD50FB /* Pods-KidsActivityGroup-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-ProjectTests/Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		251A39446E8282AF9C95A684 /* Pods_KidsActivityGroup_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivityGroup_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E5D270E2448E909008B3240 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		556952C4244644020033E202 /* KidsActivityGroup-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KidsActivityGroup-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		556952C7244644020033E202 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556952C9244644020033E202 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				556952CB244644020033E202 /* ScheduleVC.swift */,
+				3E5D270E2448E909008B3240 /* ScheduleCell.swift */,
 				556952ED244655410033E202 /* ActivityController.swift */,
 				556952EF244655540033E202 /* SettingController.swift */,
 				556952F22446561F0033E202 /* TabBarController.swift */,
@@ -381,6 +384,7 @@
 				029CACF32447D9D200ACF90D /* CoreDataManager.swift in Sources */,
 				C1FE223B244664E700D1E33D /* ActivityModel.swift in Sources */,
 				556952F32446561F0033E202 /* TabBarController.swift in Sources */,
+				3E5D270F2448E909008B3240 /* ScheduleCell.swift in Sources */,
 				029CACF52448D34B00ACF90D /* URL+VideoPreviewThumbnail.swift in Sources */,
 				556952EE244655410033E202 /* ActivityController.swift in Sources */,
 				556952CA244644020033E202 /* SceneDelegate.swift in Sources */,
