@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class ScheduleVC: UIViewController {
     
@@ -19,6 +20,7 @@ class ScheduleVC: UIViewController {
     }
     
     var selectedMedia = CDActivity()
+    var selectedCell: ScheduleCell?
     
     private lazy var imagePickerController: UIImagePickerController = {
         let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
@@ -43,6 +45,7 @@ class ScheduleVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         plannedActivities = CoreDataManager.shared.fetchActivities()
+        collectionView.reloadData()
     }
     
     private func configureCollectionView()  {
@@ -74,7 +77,17 @@ extension ScheduleVC: UICollectionViewDataSource  {
 extension ScheduleVC: UICollectionViewDelegateFlowLayout  {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print("pressed a cell \(indexPath.row)")
+        let activity = plannedActivities[indexPath.row]
+        
+        guard let videoURL = activity.videoData?.convertToURL() else {
+            return
+        }
+        let playerViewController = AVPlayerViewController()
+        let player = AVPlayer(url: videoURL)
+        playerViewController.player = player
+        present(playerViewController, animated: true) {
+            player.play()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -95,6 +108,7 @@ extension ScheduleVC: ScheduleCellDelegate {
     func didLongPress(_ scheduleCell: ScheduleCell, activity: CDActivity) {
         
         selectedMedia = activity
+        selectedCell = scheduleCell
         
         guard let indexPath = collectionView.indexPath(for: scheduleCell) else {
             return
@@ -162,6 +176,8 @@ extension ScheduleVC: UIImagePickerControllerDelegate, UINavigationControllerDel
         default:
             print("unsupported media type")
         }
+        
+        selectedCell?.configureCell(plannedActivity: selectedMedia)
         
         picker.dismiss(animated: true)
     }
