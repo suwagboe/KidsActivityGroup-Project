@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-hd-UaL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W36-xv-TFN">
-                                    <size key="itemSize" width="306" height="309"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="653"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="W36-xv-TFN">
+                                    <size key="itemSize" width="244" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -63,13 +63,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIR-KN-zkH">
+                                <rect key="frame" x="184" y="766" width="46" height="22"/>
+                                <color key="tintColor" red="0.96930998560000003" green="0.64052090139999995" blue="0.91155132559999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="arrow.clockwise" catalog="system">
+                                    <color key="titleColor" red="0.96930998560000003" green="0.64052090139999995" blue="0.91155132559999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="LMz-hd-UaL" firstAttribute="bottom" secondItem="ITm-pL-wur" secondAttribute="bottom" id="CdM-iX-jfB"/>
-                            <constraint firstItem="LMz-hd-UaL" firstAttribute="leading" secondItem="ITm-pL-wur" secondAttribute="leading" id="QhR-xl-aMt"/>
-                            <constraint firstItem="LMz-hd-UaL" firstAttribute="top" secondItem="ITm-pL-wur" secondAttribute="top" id="bbV-ne-jWC"/>
-                            <constraint firstItem="LMz-hd-UaL" firstAttribute="trailing" secondItem="ITm-pL-wur" secondAttribute="trailing" id="zEc-JZ-sgt"/>
+                            <constraint firstItem="ITm-pL-wur" firstAttribute="trailing" secondItem="qIR-KN-zkH" secondAttribute="trailing" constant="184" id="DY5-bd-HJO"/>
+                            <constraint firstItem="LMz-hd-UaL" firstAttribute="top" secondItem="ITm-pL-wur" secondAttribute="top" id="ENW-aS-En4"/>
+                            <constraint firstItem="qIR-KN-zkH" firstAttribute="leading" secondItem="ITm-pL-wur" secondAttribute="leading" constant="184" id="TFl-lS-TMo"/>
+                            <constraint firstItem="LMz-hd-UaL" firstAttribute="trailing" secondItem="ITm-pL-wur" secondAttribute="trailing" id="cJy-Fe-DZd"/>
+                            <constraint firstItem="qIR-KN-zkH" firstAttribute="top" secondItem="LMz-hd-UaL" secondAttribute="bottom" constant="25" id="hZe-Jn-YdZ"/>
+                            <constraint firstItem="LMz-hd-UaL" firstAttribute="leading" secondItem="ITm-pL-wur" secondAttribute="leading" id="khZ-4k-3QE"/>
+                            <constraint firstItem="ITm-pL-wur" firstAttribute="bottom" secondItem="qIR-KN-zkH" secondAttribute="bottom" constant="25" id="ziv-gd-XDw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ITm-pL-wur"/>
                     </view>
@@ -95,6 +105,55 @@
                     <view key="view" contentMode="scaleToFill" id="PCP-UA-5Rz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Bj-ic-zbm">
+                                <rect key="frame" x="61" y="326" width="287" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIk-ev-1se">
+                                <rect key="frame" x="176" y="297" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tsy-zw-Nsl">
+                                <rect key="frame" x="54" y="218" width="287" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEP-OS-woL">
+                                <rect key="frame" x="176" y="397" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vCu-rb-Bbx">
+                                <rect key="frame" x="61" y="426" width="287" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alpha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVx-00-uDK">
+                                <rect key="frame" x="176" y="521" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UQk-GB-FOT">
+                                <rect key="frame" x="61" y="550" width="287" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-0w-DGc">
+                                <rect key="frame" x="183" y="182" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="cf7-j5-uNX"/>
                     </view>
@@ -102,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKW-gZ-q6N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="523"/>
+            <point key="canvasLocation" x="3766.666666666667" y="522.99107142857144"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="8oV-A0-UzX">
@@ -210,6 +269,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
 </document>
