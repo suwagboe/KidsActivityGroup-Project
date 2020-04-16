@@ -16,13 +16,13 @@ protocol TransferTwoFirstController {
 class ActivityController: UIViewController {
     
     // collection View
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
  //   private let databaseService = DatabaseService()
 
     private var activityList = [Activity](){
         didSet{
-            tableView.reloadData()
+            collectionView.reloadData()
         }
     }
 
@@ -32,8 +32,8 @@ class ActivityController: UIViewController {
     }
     
     private func configureUI(){
-        tableView.dataSource = self
-        tableView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         loadActivites()
     }
     
@@ -55,30 +55,49 @@ class ActivityController: UIViewController {
     
 }
 
-extension ActivityController: UITableViewDataSource{
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         activityList.count
+
+extension ActivityController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return activityList.count
+
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as? ActivityCell else {
+            fatalError("couldnt downcast to ActivityCell")
+        }
                    
         let seletect = activityList[indexPath.row]
         
-        cell.textLabel?.text = seletect.title
-        cell.detailTextLabel?.text = seletect.description
+        cell.configureCell(for: seletect)
+      //  cell.textLabel?.text = seletect.title
+      //  cell.detailTextLabel?.text = seletect.description
         
         return cell
     }
+    
+    
+    
 }
 
-extension ActivityController: UITableViewDelegate {
+extension ActivityController: UICollectionViewDelegateFlowLayout{
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           let maxSize: CGSize = UIScreen.main.bounds.size
+           let itemWidth: CGFloat = maxSize.width
+           let itemHeight: CGFloat = maxSize.height * 0.40
+           return CGSize(width: itemWidth, height: itemHeight)
+         }
+         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+           return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+         }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
     }
 }
+
 
 
 
