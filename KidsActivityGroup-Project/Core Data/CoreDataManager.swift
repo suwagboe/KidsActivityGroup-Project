@@ -19,7 +19,7 @@ class CoreDataManager {
     
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    public func createActivity(imageData: Data, videoURL: URL?, id: String, title: String, description: String) -> CDActivity {
+    public func createActivity(imageData: Data?, videoURL: URL?, id: String, title: String, description: String) -> CDActivity {
         
         let activity = CDActivity(entity: CDActivity.entity(), insertInto: context)
         
