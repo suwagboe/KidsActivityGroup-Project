@@ -53,7 +53,6 @@ class ActivityController: UIViewController {
     }
 }
 
-
 extension ActivityController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return activityList.count
@@ -70,42 +69,36 @@ extension ActivityController: UICollectionViewDataSource{
         return cell
     }
     
-    
 }
 
 extension ActivityController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            let maxSize: CGSize = UIScreen.main.bounds.size
-           let spacingBtw: CGFloat = 2
-        let numOfItems: CGFloat = 2
-           let itemHeight: CGFloat = maxSize.height * 0.3
+        let spacingBtw: CGFloat = 10.0
+        let numOfItems: CGFloat = 2.0
+        let itemHeight: CGFloat = maxSize.height * 0.45
         
-        let totalSpacing: CGFloat = (2 * spacingBtw) + (numOfItems - 1) * spacingBtw
+    
+        let maxWidth = maxSize.width
         
-        let itemWidth: CGFloat = (maxSize.width * totalSpacing) / numOfItems
-
+          let totalSpacing: CGFloat = numOfItems * CGFloat(spacingBtw)
+        
+            let itemWidth = (maxWidth - totalSpacing) / numOfItems
         
            return CGSize(width: itemWidth, height: itemHeight)
          }
          func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: -5)
+           return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
          }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let activityChoosenFromActivityControl = activityList[indexPath.row]
+        print("I clicked this one: \(activityChoosenFromActivityControl)")
         
         // where I get create the core data type
-        /*
-         @NSManaged public var activityDate: Date?
-         @NSManaged public var activityDescription: String?
-         @NSManaged public var id: String?
-         @NSManaged public var imageData: Data?
-         @NSManaged public var videoData: Data?
-         @NSManaged public var title: String?
-         */
+      
         
         let activityToBeCreated = CoreDataManager.shared.createActivity(imageData: nil, videoURL: nil, id: activityChoosenFromActivityControl.id , title: activityChoosenFromActivityControl.title, description: activityChoosenFromActivityControl.description)
         
@@ -119,6 +112,10 @@ extension ActivityController: UICollectionViewDelegateFlowLayout{
     // confetti for when item is selected
         
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        return collectionView.indexPathsForSelectedItems?.count ?? 0 <=  4
     }
 }
 
