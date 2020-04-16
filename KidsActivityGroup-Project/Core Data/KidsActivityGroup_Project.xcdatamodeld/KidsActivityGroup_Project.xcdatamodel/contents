@@ -3,11 +3,12 @@
     <entity name="CDActivity" representedClassName=".CDActivity" syncable="YES">
         <attribute name="activityDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="activityDescription" optional="YES" attributeType="String"/>
-        <attribute name="activityId" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="videoData" optional="YES" attributeType="Binary"/>
     </entity>
     <elements>
-        <element name="CDActivity" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="CDActivity" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

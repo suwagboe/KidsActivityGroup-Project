@@ -17,10 +17,11 @@ extension CDActivity {
         return NSFetchRequest<CDActivity>(entityName: "CDActivity")
     }
 
-    @NSManaged public var videoData: Data?
-    @NSManaged public var imageData: Data?
     @NSManaged public var activityDate: Date?
-    @NSManaged public var activityId: String?
     @NSManaged public var activityDescription: String?
+    @NSManaged public var id: String?
+    @NSManaged public var imageData: Data?
+    @NSManaged public var videoData: Data?
+    @NSManaged public var title: String?
 
 }

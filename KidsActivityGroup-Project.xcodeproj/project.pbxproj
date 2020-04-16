@@ -11,6 +11,7 @@
 		023D1C4A2447D11B00E8E656 /* CDActivity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D1C482447D11B00E8E656 /* CDActivity+CoreDataClass.swift */; };
 		023D1C4B2447D11B00E8E656 /* CDActivity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D1C492447D11B00E8E656 /* CDActivity+CoreDataProperties.swift */; };
 		023D1C4D2447D19900E8E656 /* ConvertDataToURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D1C4C2447D19900E8E656 /* ConvertDataToURL.swift */; };
+		029CACF32447D9D200ACF90D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029CACF22447D9D200ACF90D /* CoreDataManager.swift */; };
 		2ECC7594E5379678B7D2FB9A /* Pods_KidsActivityGroup_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA122848CAE061F4BD6FF681 /* Pods_KidsActivityGroup_ProjectTests.framework */; };
 		556952C8244644020033E202 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C7244644020033E202 /* AppDelegate.swift */; };
 		556952CA244644020033E202 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556952C9244644020033E202 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 		023D1C482447D11B00E8E656 /* CDActivity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		023D1C492447D11B00E8E656 /* CDActivity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDActivity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		023D1C4C2447D19900E8E656 /* ConvertDataToURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDataToURL.swift; sourceTree = "<group>"; };
+		029CACF22447D9D200ACF90D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		037BAF6D1F75346950AD50FB /* Pods-KidsActivityGroup-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-KidsActivityGroup-ProjectTests/Pods-KidsActivityGroup-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		251A39446E8282AF9C95A684 /* Pods_KidsActivityGroup_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidsActivityGroup_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		556952C4244644020033E202 /* KidsActivityGroup-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KidsActivityGroup-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				023D1C482447D11B00E8E656 /* CDActivity+CoreDataClass.swift */,
 				023D1C492447D11B00E8E656 /* CDActivity+CoreDataProperties.swift */,
 				556952D0244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld */,
+				029CACF22447D9D200ACF90D /* CoreDataManager.swift */,
 				023D1C4C2447D19900E8E656 /* ConvertDataToURL.swift */,
 			);
 			path = "Core Data";
@@ -369,6 +372,7 @@
 				556952D2244644020033E202 /* KidsActivityGroup_Project.xcdatamodeld in Sources */,
 				556952C8244644020033E202 /* AppDelegate.swift in Sources */,
 				023D1C4B2447D11B00E8E656 /* CDActivity+CoreDataProperties.swift in Sources */,
+				029CACF32447D9D200ACF90D /* CoreDataManager.swift in Sources */,
 				C1FE223B244664E700D1E33D /* ActivityModel.swift in Sources */,
 				556952F32446561F0033E202 /* TabBarController.swift in Sources */,
 				556952EE244655410033E202 /* ActivityController.swift in Sources */,
