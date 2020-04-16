@@ -41,12 +41,50 @@ class CoreDataManager {
         do {
             try context.save()
         } catch {
-            print("failed to save newly created media object with error: \(error)")
+            print("failed to save activity with error: \(error)")
         }
         
         return activity
     }
     
+    public func fetchActivities() -> [CDActivity] {
+        
+        do {
+            activities = try context.fetch(CDActivity.fetchRequest())
+        } catch {
+            print("failed to fetch activities with: \(error)")
+        }
+        return activities
+    }
     
+    public func updateActivity(imageData: Data, videoURL: URL?, activity: CDActivity) {
+        
+        activity.setValue(imageData, forKey: "imageData")
+        
+        if let videoURL = videoURL {
+            do {
+                activity.setValue(try Data(contentsOf: videoURL), forKey: "videoData")
+            } catch {
+                print("failed to convert URL to Data with error: \(error)")
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("failed to save activity with error: \(error)")
+        }
+    }
 
+    public func deleteActivity(activity: CDActivity) {
+        
+        context.delete(activity)
+        
+        do {
+            try context.save()
+        } catch {
+            print("failed to save activity with error: \(error)")
+        }
+    }
+    
 }
