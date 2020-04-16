@@ -9,17 +9,18 @@
 import UIKit
 import Firebase
 
-protocol TransferTwoFirstController {
-    func sendActivityTwoFirstController()
+protocol TransferSelectedActivites: AnyObject {
+    // needs to take in the type from coreData
+    //addActivityToFirstController(_ ActiveController: ActitivyController, Seleteactivity: CDActivity)
+    func addActivityToFirstController(_ ActiveController: ActivityController, Seleteactivity: CDActivity)
 }
 
 class ActivityController: UIViewController {
-    
     // collection View
     @IBOutlet weak var collectionView: UICollectionView!
     
- //   private let databaseService = DatabaseService()
-
+    weak var delegate: TransferSelectedActivites?
+    
     private var activityList = [Activity](){
         didSet{
             collectionView.reloadData()
@@ -37,7 +38,6 @@ class ActivityController: UIViewController {
         loadActivites()
     }
     
-    
     private func loadActivites() {
         // do we want the activites to disappear after they add it
      DatabaseService.shared.fetchActivities(completion: {
@@ -51,8 +51,6 @@ class ActivityController: UIViewController {
             }
         })
     }
-    
-    
 }
 
 
@@ -71,7 +69,6 @@ extension ActivityController: UICollectionViewDataSource{
         cell.backgroundColor = .purple
         return cell
     }
-    
     
     
 }
@@ -97,7 +94,31 @@ extension ActivityController: UICollectionViewDelegateFlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        
+        let activityChoosenFromActivityControl = activityList[indexPath.row]
+        
+        // where I get create the core data type
+        /*
+         @NSManaged public var activityDate: Date?
+         @NSManaged public var activityDescription: String?
+         @NSManaged public var id: String?
+         @NSManaged public var imageData: Data?
+         @NSManaged public var videoData: Data?
+         @NSManaged public var title: String?
+         */
+        
+        let activityToBeCreated = CoreDataManager.shared.createActivity(imageData: nil, videoURL: nil, id: activityChoosenFromActivityControl.id , title: activityChoosenFromActivityControl.title, description: activityChoosenFromActivityControl.description)
+        
+        
+        // pass the core data type through the delegate
+        delegate?.addActivityToFirstController(self, Seleteactivity: activityToBeCreated)
+        
+        // we are gonna automatically segue to the list controller once they click one
+        
+                
+    // confetti for when item is selected
+        
+        
     }
 }
 
