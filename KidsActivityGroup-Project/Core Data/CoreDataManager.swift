@@ -55,7 +55,6 @@ class CoreDataManager {
             print("failed to fetch activities with: \(error)")
         }
         return activities
-        
     }
     
     public func updateActivity(imageData: Data, videoURL: URL?, activity: CDActivity) {
@@ -77,4 +76,15 @@ class CoreDataManager {
         }
     }
 
+    public func deleteActivity(activity: CDActivity) {
+        
+        context.delete(activity)
+        
+        do {
+            try context.save()
+        } catch {
+            print("failed to save activity with error: \(error)")
+        }
+    }
+    
 }
