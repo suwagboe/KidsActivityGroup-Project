@@ -66,13 +66,9 @@ extension ActivityController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath) as? ActivityCell else {
             fatalError("couldnt downcast to ActivityCell")
         }
-                   
         let seletect = activityList[indexPath.row]
-        
         cell.configureCell(for: seletect)
-      //  cell.textLabel?.text = seletect.title
-      //  cell.detailTextLabel?.text = seletect.description
-        
+        cell.backgroundColor = .purple
         return cell
     }
     
@@ -84,12 +80,19 @@ extension ActivityController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            let maxSize: CGSize = UIScreen.main.bounds.size
-           let itemWidth: CGFloat = maxSize.width
-           let itemHeight: CGFloat = maxSize.height * 0.40
+           let spacingBtw: CGFloat = 2
+        let numOfItems: CGFloat = 2
+           let itemHeight: CGFloat = maxSize.height * 0.3
+        
+        let totalSpacing: CGFloat = (2 * spacingBtw) + (numOfItems - 1) * spacingBtw
+        
+        let itemWidth: CGFloat = (maxSize.width * totalSpacing) / numOfItems
+
+        
            return CGSize(width: itemWidth, height: itemHeight)
          }
          func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+           return UIEdgeInsets(top: 10, left: 5, bottom: 10, right: -5)
          }
     
     
