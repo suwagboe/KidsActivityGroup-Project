@@ -19,6 +19,8 @@ class ScheduleCell: UICollectionViewCell {
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet var activityImageView: UIImageView!
+    
     public var currentActivity: CDActivity?
     
     weak var scheduleDelegate: ScheduleCellDelegate?
@@ -36,8 +38,21 @@ class ScheduleCell: UICollectionViewCell {
     }
     
     public func configureCell(plannedActivity: CDActivity)    {
-        titleLabel.text = plannedActivity.title
-        descriptionLabel.text = plannedActivity.description
+        
+        if plannedActivity.imageData == nil {
+            titleLabel.text = plannedActivity.title
+            descriptionLabel.text = plannedActivity.activityDescription
+        } else {
+            descriptionLabel.isHidden = true
+            if let imageData = plannedActivity.imageData {
+              activityImageView.image = UIImage(data: imageData)
+            }
+                
+            if let videoURL = plannedActivity.videoData?.convertToURL() {
+              let image = videoURL.videoPreviewThumbnail() ?? UIImage(systemName: "photo")
+              activityImageView.image = image
+            }
+        }
     }
     
     @objc private func longPressAction(gesture: UILongPressGestureRecognizer) {

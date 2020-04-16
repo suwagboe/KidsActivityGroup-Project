@@ -188,23 +188,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jg-hy-nrO">
-                                                    <rect key="frame" x="129" y="76" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jg-hy-nrO">
+                                                    <rect key="frame" x="20" y="50" width="260" height="21"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9s-3G-kve">
+                                                    <rect key="frame" x="20" y="91" width="260" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9s-3G-kve">
-                                                    <rect key="frame" x="129" y="122" width="88" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3gj-en-EBa">
+                                                    <rect key="frame" x="20" y="10" width="260" height="280"/>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3gj-en-EBa" firstAttribute="leading" secondItem="CiQ-I7-BzN" secondAttribute="leading" constant="20" id="2ir-Rt-W2J"/>
+                                                <constraint firstItem="3gj-en-EBa" firstAttribute="top" secondItem="CiQ-I7-BzN" secondAttribute="top" constant="10" id="3rQ-IZ-56u"/>
+                                                <constraint firstAttribute="trailing" secondItem="l9s-3G-kve" secondAttribute="trailing" constant="20" id="5lc-K8-red"/>
+                                                <constraint firstItem="l9s-3G-kve" firstAttribute="leading" secondItem="CiQ-I7-BzN" secondAttribute="leading" constant="20" id="6Nc-do-9n4"/>
+                                                <constraint firstItem="l9s-3G-kve" firstAttribute="top" secondItem="7jg-hy-nrO" secondAttribute="bottom" constant="20" id="9z4-2n-Yez"/>
+                                                <constraint firstItem="7jg-hy-nrO" firstAttribute="top" secondItem="CiQ-I7-BzN" secondAttribute="top" constant="50" id="AzK-Cx-fwm"/>
+                                                <constraint firstAttribute="trailing" secondItem="7jg-hy-nrO" secondAttribute="trailing" constant="20" id="jtm-ao-fC9"/>
+                                                <constraint firstAttribute="bottom" secondItem="3gj-en-EBa" secondAttribute="bottom" constant="10" id="ucf-RK-g5y"/>
+                                                <constraint firstItem="7jg-hy-nrO" firstAttribute="leading" secondItem="CiQ-I7-BzN" secondAttribute="leading" constant="20" id="xGd-63-4Id"/>
+                                                <constraint firstAttribute="trailing" secondItem="3gj-en-EBa" secondAttribute="trailing" constant="20" id="yPK-NM-Dtl"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="activityImageView" destination="3gj-en-EBa" id="Kdk-49-d0e"/>
                                             <outlet property="descriptionLabel" destination="l9s-3G-kve" id="4lb-vs-tNV"/>
                                             <outlet property="titleLabel" destination="7jg-hy-nrO" id="kA4-ub-JPc"/>
                                         </connections>
