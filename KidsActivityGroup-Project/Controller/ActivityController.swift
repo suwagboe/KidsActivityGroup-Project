@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol TransferTwoFirstController {
     func sendActivityTwoFirstController()
@@ -15,11 +16,13 @@ protocol TransferTwoFirstController {
 class ActivityController: UIViewController {
     
     // collection View
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
-    private var activityList = [String](){
+ //   private let databaseService = DatabaseService()
+
+    private var activityList = [Activity](){
         didSet{
-            collectionView.reloadData()
+            tableView.reloadData()
         }
     }
 
@@ -29,38 +32,53 @@ class ActivityController: UIViewController {
     }
     
     private func configureUI(){
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        loadActivites()
     }
     
+    
+    private func loadActivites() {
+        // do we want the activites to disappear after they add it
+     DatabaseService.shared.fetchActivities(completion: {
+            [weak self]
+            (result) in
+            switch result {
+            case .failure:
+                break
+            case .success(let activities):
+                self?.activityList = activities
+            }
+        })
+    }
     
     
 }
 
-extension ActivityController: UICollectionViewDataSource {
+extension ActivityController: UITableViewDataSource{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activityList.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         activityList.count
     }
     
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activityCell", for: indexPath)
-             
-             return cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+                   
+        let seletect = activityList[indexPath.row]
+        
+        cell.textLabel?.text = seletect.title
+        cell.detailTextLabel?.text = seletect.description
+        
+        return cell
     }
-    
-    
 }
 
-extension ActivityController: UICollectionViewDelegate {
+extension ActivityController: UITableViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // which ever cell they click on will then be sequed to the first view controller as an option to edit
-        
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    
 }
+
+
+
