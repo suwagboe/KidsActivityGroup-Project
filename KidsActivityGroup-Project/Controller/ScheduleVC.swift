@@ -19,8 +19,10 @@ class ScheduleVC: UIViewController {
         }
     }
     
-    var selectedMedia = CDActivity()
-    var selectedCell: ScheduleCell?
+    private var selectedMedia = CDActivity()
+    private var selectedCell: ScheduleCell?
+    
+    private var refreshControl: UIRefreshControl!
     
     private lazy var imagePickerController: UIImagePickerController = {
         let mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)
@@ -40,18 +42,35 @@ class ScheduleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        loadActivities()
+        configureRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        plannedActivities = CoreDataManager.shared.fetchActivities()
-        collectionView.reloadData()
+        configureRefreshControl()
+        loadActivities()
     }
     
     private func configureCollectionView()  {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    
+    func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(loadActivities), for: .valueChanged)
+    }
+    
+    @objc private func loadActivities() {
+        plannedActivities = CoreDataManager.shared.fetchActivities().sorted {$0.activityDate! < $1.activityDate!}
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    
 }
 
 extension ScheduleVC: UICollectionViewDataSource  {
@@ -177,7 +196,7 @@ extension ScheduleVC: UIImagePickerControllerDelegate, UINavigationControllerDel
             print("unsupported media type")
         }
         
-        selectedCell?.configureCell(plannedActivity: selectedMedia)
+//        selectedCell?.configureCell(plannedActivity: selectedMedia)
         
         picker.dismiss(animated: true)
     }
